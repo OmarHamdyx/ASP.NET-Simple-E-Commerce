@@ -2,33 +2,24 @@
 
 namespace ASP.NET_Simple_E_Commerce.Models
 {
-    public class Product : IValidatableObject
+    public class Product
     {
         [Display(Name = "Product Code")]
-        [Required(ErrorMessage = "The {0} is required.")]
+        [Required(ErrorMessage = "{0} is required.")]
+        [Range(1, int.MaxValue, ErrorMessage = "{0} should be between a valid number")]
 
-        public int ProductCode { get; set; }
+        public int? ProductCode { get; set; }
 
-        [Required(ErrorMessage = "The {0} is required.")]
+        [Required(ErrorMessage = "{0} is required.")]
+        [Range(1, double.MaxValue, ErrorMessage = "{0} should be between a valid number")]
 
-        public double Price { get; set; }
+        public double? Price { get; set; }
 
-        [Required(ErrorMessage = "The {0} is required.")]
+        [Required(ErrorMessage = "{0} is required.")]
+        [Range(1, int.MaxValue, ErrorMessage = "{0} should be between a valid number")]
 
-        public int Quantity { get; set; }
+        public int? Quantity { get; set; }
 
-
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        {
-            
-            if (Price <= 0)
-            {
-                yield return new ValidationResult("Product Price must be between a valid number", new string[] { nameof(Price) });
-            }
-            if (Quantity <= 0)
-            {
-                yield return new ValidationResult("Product Quantity must be between a valid number", new string[] { nameof(Quantity) });
-            }
-        }
+       
     }
 }
