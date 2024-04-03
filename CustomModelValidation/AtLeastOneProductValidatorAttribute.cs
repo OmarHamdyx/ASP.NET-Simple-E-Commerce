@@ -19,6 +19,5 @@ namespace ASP.NET_Simple_E_Commerce.CustomModelValidation
             }
             return null;
         }
-
     }
 }

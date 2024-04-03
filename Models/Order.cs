@@ -4,8 +4,10 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ASP.NET_Simple_E_Commerce.Models
 {
+    
     public class Order //: IValidatableObject
     {
+        
         [BindNever]
         public int OrderNo { get; set; }
 

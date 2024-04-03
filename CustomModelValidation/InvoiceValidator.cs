@@ -35,7 +35,7 @@ namespace ASP.NET_Simple_E_Commerce.CustomModelValidation
                     }
                     else if (products.Count!=0) 
                     {
-                        return new ValidationResult("Please add correct Product prices or Invoice Price");
+                        return new ValidationResult("Please add correct Product prices or Invoice Price",new string[] {nameof(validationContext.MemberName) } );
                     }
                 }
                 return null;
