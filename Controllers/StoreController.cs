@@ -1,4 +1,5 @@
 ﻿using ASP.NET_Simple_E_Commerce.Models;
+using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Mvc;
 namespace ASP.NET_Simple_E_Commerce.Controllers
 {
@@ -37,6 +38,7 @@ namespace ASP.NET_Simple_E_Commerce.Controllers
             catch (Exception)
             {
                 return StatusCode(500, "Internal Server Error");
+                
             }
         }
     }

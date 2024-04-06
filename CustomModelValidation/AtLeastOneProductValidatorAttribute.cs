@@ -4,7 +4,7 @@ using System.Reflection;
 
 namespace ASP.NET_Simple_E_Commerce.CustomModelValidation
 {
-    internal class AtLeastOneProductValidatorAttribute : ValidationAttribute
+    public class AtLeastOneProductValidatorAttribute : ValidationAttribute
     {
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
@@ -15,7 +15,7 @@ namespace ASP.NET_Simple_E_Commerce.CustomModelValidation
                 {
                     return new ValidationResult("Please add Products");
                 }
-                return ValidationResult.Success;    
+                return ValidationResult.Success;  
             }
             return null;
         }
